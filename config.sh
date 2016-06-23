@@ -26,7 +26,7 @@ gsettings set org.gnome.desktop.interface cursor-blink false
 
 # vim setup
 #git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-ln -srf $COFIG_DIR/.vimrc ~/.vimrc
+ln -srf $CONFIG_DIR/.vimrc ~/.vimrc
 
 # tmux setup
 ln -srf $CONFIG_DIR/.tmux.conf ~/.tmux.conf
