@@ -20,6 +20,11 @@ Plugin 'xoria256.vim'
 
 filetype plugin indent on
 
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab
+
 set incsearch
 set hlsearch
 set wrapscan
