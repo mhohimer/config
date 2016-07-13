@@ -7,18 +7,21 @@ call vundle#rc()
 Plugin 'gmarik/vundle'
 Plugin 'taglist.vim'
 Plugin 'autoload_cscope.vim'
-"
+Plugin 'scrooloose/nerdcommenter'
+
 " colorschemes
 Plugin 'Distinguished'
 Plugin 'twilight256.vim'
 Plugin 'wombat256.vim'
 Plugin 'xoria256.vim'
 
+"Plugin 'sirver/ultisnips'
+"Plugin 'honza/vim-snippets'
+
 "Python
 Plugin 'nvie/vim-flake8'
 Plugin 'indentpython.vim'
 Plugin 'valloric/youcompleteme'
-Plugin 'sirver/ultisnips'
 
 filetype plugin indent on
 
@@ -46,3 +49,15 @@ nnoremap <leader>Y :let g:ycm_auto_trigger=1<CR>
 
 nnoremap <silent> <F2> :TlistToggle<CR>
 nnoremap <F3> :YcmCompleter GoTo<CR>
+
+vnoremap # :s/^/#/<cr>:noh<cr>
+vnoremap -# : s/^#//<cr>:noh<cr>
+
+fun! TrimWhitespace()
+    let l:save_cursor = getpos('.')
+    %s/\s\+$//e
+    call setpos('.', l:save_cursor)
+endfun
+
+command! TrimWhitespace call TrimWhitespace()
+nnoremap <leader>w :TrimWhitespace
