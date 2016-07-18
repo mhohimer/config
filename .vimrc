@@ -8,12 +8,18 @@ Plugin 'gmarik/vundle'
 Plugin 'taglist.vim'
 Plugin 'autoload_cscope.vim'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-fugitive'
 
 " colorschemes
 Plugin 'Distinguished'
 Plugin 'twilight256.vim'
 Plugin 'wombat256.vim'
 Plugin 'xoria256.vim'
+Plugin 'Zenburn'
 
 "Plugin 'sirver/ultisnips'
 "Plugin 'honza/vim-snippets'
@@ -48,7 +54,7 @@ nnoremap <leader>y :let g:ycm_auto_trigger=0<CR>
 nnoremap <leader>Y :let g:ycm_auto_trigger=1<CR>
 
 nnoremap <silent> <F2> :TlistToggle<CR>
-nnoremap <F3> :YcmCompleter GoTo<CR>
+nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
 vnoremap # :s/^/#/<cr>:noh<cr>
 vnoremap -# : s/^#//<cr>:noh<cr>
@@ -61,3 +67,12 @@ endfun
 
 command! TrimWhitespace call TrimWhitespace()
 nnoremap <leader>w :TrimWhitespace
+
+" Flag bad whitespace
+hi link SpellBad BadWhitespace
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+
+let g:ycm_autoclose_preview_window_after_completion=1
+nmap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"nnoremap <F3> :YcmCompleter GoTo<CR>
