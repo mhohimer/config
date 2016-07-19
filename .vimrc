@@ -13,6 +13,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-fugitive'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " colorschemes
 Plugin 'Distinguished'
