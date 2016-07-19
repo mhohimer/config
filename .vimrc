@@ -9,6 +9,7 @@ Plugin 'taglist.vim'
 Plugin 'autoload_cscope.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
@@ -21,12 +22,14 @@ Plugin 'twilight256.vim'
 Plugin 'wombat256.vim'
 Plugin 'xoria256.vim'
 Plugin 'Zenburn'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 "Plugin 'sirver/ultisnips'
 "Plugin 'honza/vim-snippets'
+"Plugin 'nvie/vim-flake8'
 
 "Python
-Plugin 'nvie/vim-flake8'
 Plugin 'indentpython.vim'
 Plugin 'valloric/youcompleteme'
 
@@ -37,7 +40,6 @@ set tabstop=4
 set shiftwidth=4
 set smarttab
 set expandtab
-
 set incsearch
 set hlsearch
 set wrapscan
@@ -45,6 +47,11 @@ set number
 set nowrap
 set ignorecase
 set smartcase
+set autoindent
+set smartindent
+set clipboard=unnamed
+set encoding=utf-8
+set ttimeoutlen=50
 
 colo wombat256mod
 
@@ -69,11 +76,11 @@ endfun
 command! TrimWhitespace call TrimWhitespace()
 nnoremap <leader>w :TrimWhitespace
 
-" Flag bad whitespace
-hi link SpellBad BadWhitespace
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
-
-
 let g:ycm_autoclose_preview_window_after_completion=1
 nmap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "nnoremap <F3> :YcmCompleter GoTo<CR>
+
+" airline
+let g:airline_powerline_fonts = 1
+set laststatus=2
+"let g:airline_theme='wombat'

@@ -7,14 +7,14 @@ CONFIG_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 #sudo apt-get update
 
 sudo apt-get --assume-yes install \
-	vim-gnome \
+    vim-gnome \
     tmux \
     sox \
-	git \
-	python-pip \
+    git \
+    python-pip \
     flake8 \
-	python-flake8 \
-	virtualenv \
+    python-flake8 \
+    virtualenv \
 
 ln -srf $CONFIG_DIR/bin ~
 
@@ -45,3 +45,22 @@ if ! grep -qe "^# mhohimer config" $BASHRC; then
     echo $BASHRC "modified, need to run:"
     echo "    source" $BASHRC
 fi
+
+# vim airline (fonts from powerline)
+# using airline instead of powerline
+#pip install --user powerline-status
+
+wget -nc -P $CONFIG_DIR \
+    https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf \
+    #https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf \
+
+# the above PowerlineSymbols.otf isn't as pixel perfect as the one below (which still isn't entirely perfect)
+wget -nc -P $CONFIG_DIR \
+    https://gist.github.com/EvanPurkhiser/6198795/raw/4bcf54ab069639d48893c45da71b6a79a8203f4d/PowerlineSymbols.otf
+
+mkdir -p ~/.fonts/
+mv $CONFIG_DIR/PowerlineSymbols.otf ~/.fonts/
+mv $CONFIG_DIR/Ubuntu\ Mono\ derivative\ Powerline.ttf ~/.fonts/
+fc-cache -vf ~/.fonts
+mkdir -p ~/.config/fontconfig/conf.d/
+mv $CONFIG_DIR/10-powerline-symbols.conf ~/.config/fontconfig/conf.d
