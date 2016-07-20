@@ -1,0 +1,10 @@
+95a96,104
+> hi WarningMsg   ctermfg=185                                     guifg=#d7d75f
+> hi ErrorMsg     ctermfg=203     ctermbg=234     cterm=bold      guifg=#ff5f5f   guibg=#242424   gui=bold
+> hi Todo         ctermfg=185     ctermbg=234     cterm=bold      guifg=#d7d75f   guibg=#242424   gui=bold
+> hi! link SignColumn     LineNr
+> hi! link SpellBad       ErrorMsg
+> 
+> hi SyntasticErrorSign       ctermfg=203     ctermbg=232     cterm=bold      guifg=#ff5f00   guibg=#080808   gui=bold
+> hi SyntasticWarningSign     ctermfg=228     ctermbg=232     cterm=bold      guifg=#ffff87   guibg=#080808   gui=bold
+> 

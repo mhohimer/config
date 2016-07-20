@@ -32,7 +32,7 @@ if [ ! -d "$HOME/.vim/bundle/vundle" ]; then
 fi
 ln -srf $CONFIG_DIR/.vimrc ~/.vimrc
 vim -c "PluginInstall" -c "q | q"
-ln -srf $CONFIG_DIR/vim/wombat256mod.vim $HOME/.vim/bundle/vim-airline-themes/autoload/airline/themes/
+ln -srf $CONFIG_DIR/vim/airline/wombat256mod.vim $HOME/.vim/bundle/vim-airline-themes/autoload/airline/themes/
 
 # vim airline (fonts from powerline)
 # using airline instead of powerline
@@ -44,6 +44,16 @@ wget -nc -P $CONFIG_DIR \
 # the above PowerlineSymbols.otf isn't as pixel perfect as the one below (which still isn't entirely perfect)
 wget -nc -P $CONFIG_DIR \
     https://gist.github.com/EvanPurkhiser/6198795/raw/4bcf54ab069639d48893c45da71b6a79a8203f4d/PowerlineSymbols.otf
+
+# update wombat256mod colorscheme
+if [ -e $HOME/.vim/bundle/wombat256.vim/colors/wombat256mod.vim.orig ]; then
+    mv $HOME/.vim/bundle/wombat256.vim/colors/wombat256mod.vim.orig \
+        $HOME/.vim/bundle/wombat256.vim/colors/wombat256mod.vim
+fi
+patch -b \
+    $HOME/.vim/bundle/wombat256.vim/colors/wombat256mod.vim \
+    $CONFIG_DIR/vim/wombat256mod.vim.patch
+
 
 mkdir -p ~/.fonts/
 cp $CONFIG_DIR/PowerlineSymbols.otf ~/.fonts/
