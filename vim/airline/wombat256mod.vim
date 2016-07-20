@@ -60,7 +60,7 @@ let g:airline#themes#wombat256mod#palette.insert = {
 
 " Visual mode
 let s:VA = [ '' , '' , s:black , s:violet ]
-let s:VZ = [ '' , '' , s:white , s:gray ]
+let s:VZ = [ '' , '' , s:black , s:violet ]
 let g:airline#themes#wombat256mod#palette.visual = {
     \ 'airline_a': s:VA,
     \ 'airline_b': s:B,
@@ -74,7 +74,7 @@ let g:airline#themes#wombat256mod#palette.visual = {
 
 " Replace mode
 let s:RA = [ '' , '' , s:black , s:red ]
-let s:RZ = [ '' , '' , s:white , s:gray ]
+let s:RZ = [ '' , '' , s:black , s:red ]
 let g:airline#themes#wombat256mod#palette.replace = {
     \ 'airline_a': s:RA,
     \ 'airline_b': s:B,
