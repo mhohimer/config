@@ -32,7 +32,7 @@ if [ ! -d "$HOME/.vim/bundle/vundle" ]; then
 fi
 ln -srf $CONFIG_DIR/.vimrc ~/.vimrc
 vim -c "PluginInstall" -c "q | q"
-cp $CONFIG_DIR/vim/wombat256mod.vim $HOME/.vim/bundle/vim-airline-themes/autoload/airline/themes/
+ln -srf $CONFIG_DIR/vim/wombat256mod.vim $HOME/.vim/bundle/vim-airline-themes/autoload/airline/themes/
 
 # vim airline (fonts from powerline)
 # using airline instead of powerline
@@ -47,7 +47,6 @@ wget -nc -P $CONFIG_DIR \
 
 mkdir -p ~/.fonts/
 cp $CONFIG_DIR/PowerlineSymbols.otf ~/.fonts/
-cp $CONFIG_DIR/Ubuntu\ Mono\ derivative\ Powerline.ttf ~/.fonts/
 fc-cache -vf ~/.fonts
 mkdir -p ~/.config/fontconfig/conf.d/
 cp $CONFIG_DIR/10-powerline-symbols.conf ~/.config/fontconfig/conf.d
