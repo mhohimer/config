@@ -31,9 +31,13 @@ if [ ! -d "$CONFIG_DIR/gnome-terminal/colors" ]; then
         $CONFIG_DIR/gnome-terminal/colors
 fi
 ln -srf $CONFIG_DIR/gnome-terminal/wombat $CONFIG_DIR/gnome-terminal/colors/colors
-profile_name="Unnamed"
-# XXX The colors aren't right yet, don't invoke this command
-#$CONFIG_DIR/gnome-terminal/colors/install.sh -s wombat -p "$profile_name"
+ln -srf $CONFIG_DIR/gnome-terminal/tango $CONFIG_DIR/gnome-terminal/colors/colors
+ln -srf $CONFIG_DIR/gnome-terminal/tango_mod $CONFIG_DIR/gnome-terminal/colors/colors
+# XXX This profile is not created by default, you will probably need to create it
+# and rerun this script, or we could programatically create a new profile and
+# make it default. Using the "Unnamed" account doesn't work.
+profile_name="Default"
+$CONFIG_DIR/gnome-terminal/colors/install.sh -s tango_mod -p "$profile_name"
 
 # tmux setup
 ln -srf $CONFIG_DIR/.tmux.conf ~/.tmux.conf
