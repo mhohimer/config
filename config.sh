@@ -11,6 +11,7 @@ sudo apt-get --assume-yes install \
     tmux \
     sox \
     git \
+    gconf-editor \
     python-pip \
     flake8 \
     python-flake8 \
@@ -25,6 +26,30 @@ chmod go-w $CONFIG_DIR/bin/noise.sh
 
 # gnome-terminal setup
 gsettings set org.gnome.desktop.interface cursor-blink false
+if [ ! -d "$CONFIG_DIR/gnome-terminal/colors" ]; then
+    git clone git://github.com/sigurdga/gnome-terminal-colors-solarized.git \
+        $CONFIG_DIR/gnome-terminal/colors
+fi
+ln -srf $CONFIG_DIR/gnome-terminal/wombat $CONFIG_DIR/gnome-terminal/colors/colors
+profile_name="Unnamed"
+# XXX The colors aren't right yet, don't invoke this command
+#$CONFIG_DIR/gnome-terminal/colors/install.sh -s wombat -p "$profile_name"
+
+# tmux setup
+ln -srf $CONFIG_DIR/.tmux.conf ~/.tmux.conf
+
+# python setup
+ln -srf $CONFIG_DIR/.flake8 ~/.flake8
+
+# bash setup
+BASHRC=~/.bashrc
+if ! grep -qe "^# mhohimer config" $BASHRC; then
+    echo "" >> $BASHRC
+    echo "# mhohimer config" >> $BASHRC
+    echo "." $CONFIG_DIR/.bashrc >> $BASHRC
+    echo $BASHRC "modified, need to run:"
+    echo "    source" $BASHRC
+fi
 
 # vim setup
 if [ ! -d "$HOME/.vim/bundle/vundle" ]; then
@@ -60,20 +85,4 @@ cp $CONFIG_DIR/PowerlineSymbols.otf ~/.fonts/
 fc-cache -vf ~/.fonts
 mkdir -p ~/.config/fontconfig/conf.d/
 cp $CONFIG_DIR/10-powerline-symbols.conf ~/.config/fontconfig/conf.d
-
-# tmux setup
-ln -srf $CONFIG_DIR/.tmux.conf ~/.tmux.conf
-
-# python setup
-ln -srf $CONFIG_DIR/.flake8 ~/.flake8
-
-# bash setup
-BASHRC=~/.bashrc
-if ! grep -qe "^# mhohimer config" $BASHRC; then
-    echo "" >> $BASHRC
-    echo "# mhohimer config" >> $BASHRC
-    echo "." $CONFIG_DIR/.bashrc >> $BASHRC
-    echo $BASHRC "modified, need to run:"
-    echo "    source" $BASHRC
-fi
 
