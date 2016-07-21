@@ -1,5 +1,6 @@
-" vim-airline companion theme of wombat256mod " looks great with wombat256mod vim colorscheme
+" vim-airline companion theme of wombat256mod
 
+let s:lightyellow = 186
 let s:yellow = 228
 let s:lightred = 173
 let s:red = 203
@@ -15,16 +16,12 @@ let s:gray = 238
 let s:darkgray = 236
 let s:black = 232
 
-let s:orange = 178
-
 let g:airline#themes#wombat256mod#palette = {}
 
 " [ guifg, guibg, ctermfg, ctermbg, opts ]
 
-let s:WARN = ['', '', s:black, s:orange]
+let s:WARN = ['', '', s:black, s:lightyellow]
 let s:ERROR = ['', '', s:black, s:red]
-"let s:WARN = ['', '', 232, 166]
-"let s:ERROR = ['', '', 232, 160]
 
 let s:B = [ '' , '' , s:white , s:lightgray ]
 let s:C = [ '' , '' , s:white , s:darkgray ]

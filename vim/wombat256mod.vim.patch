@@ -1,7 +1,7 @@
 95a96,104
-> hi WarningMsg   ctermfg=185                                     guifg=#d7d75f
+> hi WarningMsg   ctermfg=186                                     guifg=#d7d787
 > hi ErrorMsg     ctermfg=203     ctermbg=234     cterm=bold      guifg=#ff5f5f   guibg=#242424   gui=bold
-> hi Todo         ctermfg=185     ctermbg=234     cterm=bold      guifg=#d7d75f   guibg=#242424   gui=bold
+> hi Todo         ctermfg=186     ctermbg=234     cterm=bold      guifg=#d7d787   guibg=#242424   gui=bold
 > hi! link SignColumn     LineNr
 > hi! link SpellBad       ErrorMsg
 > 
