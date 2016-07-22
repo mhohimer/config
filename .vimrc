@@ -5,16 +5,21 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Plugin 'gmarik/vundle'
-Plugin 'taglist.vim'
+"Plugin 'taglist.vim'
+Plugin 'majutsushi/tagbar'
 Plugin 'autoload_cscope.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'bling/vim-bufferline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-fugitive'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'valloric/youcompleteme'
 
 " colorschemes
 Plugin 'Distinguished'
@@ -22,9 +27,6 @@ Plugin 'twilight256.vim'
 Plugin 'wombat256.vim'
 Plugin 'xoria256.vim'
 Plugin 'Zenburn'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-
 Plugin 'Colortest'
 
 "Plugin 'sirver/ultisnips'
@@ -33,7 +35,6 @@ Plugin 'Colortest'
 
 "Python
 Plugin 'indentpython.vim'
-Plugin 'valloric/youcompleteme'
 
 filetype plugin indent on
 
@@ -50,9 +51,10 @@ set nowrap
 set ignorecase
 set smartcase
 set autoindent
-set smartindent
+"set smartindent
 set clipboard=unnamed
 set encoding=utf-8
+set switchbuf=useopen
 set ttimeoutlen=50
 
 colo wombat256mod
@@ -63,7 +65,8 @@ let g:flake8_cmd = 'python2-flake8'
 nnoremap <leader>y :let g:ycm_auto_trigger=0<CR>
 nnoremap <leader>Y :let g:ycm_auto_trigger=1<CR>
 
-nnoremap <silent> <F2> :TlistToggle<CR>
+"nnoremap <silent> <F2> :TlistToggle<CR>
+nnoremap <silent> <F8> :TagbarToggle<CR>
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
 vnoremap # :s/^/#/<cr>:noh<cr>
@@ -86,3 +89,9 @@ nmap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:airline_powerline_fonts = 1
 set laststatus=2
 let g:airline_theme='wombat256mod'
+
+" auto-reload .vimrc
+augroup reload_vimrc
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup end

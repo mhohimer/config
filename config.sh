@@ -17,6 +17,10 @@ sudo apt-get --assume-yes install \
     python-flake8 \
     virtualenv \
 
+sudo pip install \
+    virtualenvwrapper \
+
+
 ln -srf $CONFIG_DIR/bin ~
 
 # noise gen script
