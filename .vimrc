@@ -47,6 +47,7 @@ set incsearch
 set hlsearch
 set wrapscan
 set number
+set relativenumber
 set nowrap
 set ignorecase
 set smartcase
@@ -64,6 +65,7 @@ let g:flake8_cmd = 'python2-flake8'
 
 nnoremap <leader>y :let g:ycm_auto_trigger=0<CR>
 nnoremap <leader>Y :let g:ycm_auto_trigger=1<CR>
+
 
 "nnoremap <silent> <F2> :TlistToggle<CR>
 nnoremap <silent> <F8> :TagbarToggle<CR>
@@ -95,3 +97,4 @@ augroup reload_vimrc
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup end
+

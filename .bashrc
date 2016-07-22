@@ -7,3 +7,13 @@ if [ -d "$HOME/.local/bin" ]; then
 fi
 
 export EDITOR=vim
+
+# virtualenvwrapper
+export WORKON_HOME=$HOME/envs
+mkdir -p $WORKON_HOME
+source /usr/local/bin/virtualenvwrapper.sh
+
+# map caps lock key to ctrl when held...
+setxkbmap -option 'caps:ctrl_modifier'
+# and to escape when tapped
+xcape -e 'Caps_Lock=Escape'

@@ -1,10 +1,12 @@
-95a96,104
+95a96,106
 > hi WarningMsg   ctermfg=186                                     guifg=#d7d787
 > hi ErrorMsg     ctermfg=203     ctermbg=234     cterm=bold      guifg=#ff5f5f   guibg=#242424   gui=bold
 > hi Todo         ctermfg=186     ctermbg=234     cterm=bold      guifg=#d7d787   guibg=#242424   gui=bold
 > hi! link SignColumn     LineNr
 > hi! link SpellBad       ErrorMsg
 > 
-> hi SyntasticErrorSign       ctermfg=203     ctermbg=232     cterm=bold      guifg=#ff5f00   guibg=#080808   gui=bold
-> hi SyntasticWarningSign     ctermfg=228     ctermbg=232     cterm=bold      guifg=#ffff87   guibg=#080808   gui=bold
+> hi SyntasticErrorSign     ctermfg=203     ctermbg=232     cterm=bold      guifg=#ff5f00   guibg=#080808   gui=bold
+> hi SyntasticWarningSign   ctermfg=228     ctermbg=232     cterm=bold      guifg=#ffff87   guibg=#080808   gui=bold
+> 
+> hi CursorLineNr		ctermfg=241		ctermbg=232		cterm=bold		guifg=#857b6f guibg=#080808	gui=bold
 > 

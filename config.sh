@@ -21,6 +21,17 @@ sudo pip install \
     virtualenvwrapper \
 
 
+# xcape (make caps lock work as escape and ctrl)
+sudo apt-get --assume-yes install \
+    libx11-dev \
+    libxtst-dev \
+    libxi-dev
+if [ ! -d "$CONFIG_DIR/xcape" ]; then
+    git clone https://github.com/alols/xcape.git $CONFIG_DIR/xcape
+    cd xcape && make && sudo make install && cd -
+fi
+
+
 ln -srf $CONFIG_DIR/bin ~
 
 # noise gen script
