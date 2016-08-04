@@ -58,6 +58,9 @@ set encoding=utf-8
 set switchbuf=useopen
 set ttimeoutlen=50
 
+set list
+set listchars=tab:>-
+
 colo wombat256mod
 
 " Use flake8 in python2
@@ -66,13 +69,9 @@ let g:flake8_cmd = 'python2-flake8'
 nnoremap <leader>y :let g:ycm_auto_trigger=0<CR>
 nnoremap <leader>Y :let g:ycm_auto_trigger=1<CR>
 
-
 "nnoremap <silent> <F2> :TlistToggle<CR>
 nnoremap <silent> <F8> :TagbarToggle<CR>
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
-
-vnoremap # :s/^/#/<cr>:noh<cr>
-vnoremap -# : s/^#//<cr>:noh<cr>
 
 fun! TrimWhitespace()
     let l:save_cursor = getpos('.')
@@ -97,4 +96,3 @@ augroup reload_vimrc
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup end
-

@@ -7,10 +7,11 @@ CONFIG_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 #sudo apt-get update
 
 sudo apt-get --assume-yes install \
-    vim-gnome \
-    tmux \
-    sox \
     git \
+    tmux \
+    vim-gnome \
+    sox \
+    htop\
     gconf-editor \
     python-pip \
     flake8 \
