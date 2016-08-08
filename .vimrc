@@ -20,6 +20,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'valloric/youcompleteme'
+Plugin 'takac/vim-hardtime'
 
 " colorschemes
 Plugin 'Distinguished'
@@ -73,6 +74,8 @@ nnoremap <leader>Y :let g:ycm_auto_trigger=1<CR>
 nnoremap <silent> <F8> :TagbarToggle<CR>
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
+nnoremap <leader>h :HardTimeToggle<CR>
+
 fun! TrimWhitespace()
     let l:save_cursor = getpos('.')
     %s/\s\+$//e
@@ -81,6 +84,7 @@ endfun
 
 command! TrimWhitespace call TrimWhitespace()
 nnoremap <leader>w :TrimWhitespace
+
 
 let g:ycm_autoclose_preview_window_after_completion=1
 nmap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>

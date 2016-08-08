@@ -17,6 +17,7 @@ sudo apt-get --assume-yes install \
     flake8 \
     python-flake8 \
     virtualenv \
+    cifs-utils \
 
 sudo pip install \
     virtualenvwrapper \
