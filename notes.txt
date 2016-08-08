@@ -1,6 +1,9 @@
-# For VMs, I prefer to mount shared folders on the host using SMB instead of
-VMware's HGFS. (The permissions are not wide open if I use SMB.) To mount the
-share, you will need to install cifs-utils, mkdir the mount point, and run the
-following command:
+
+# For VMs, I prefer to mount shared folders for Windows hosts using SMB instead
+of VMware's HGFS. (The permissions are not wide open if I use SMB.) Make the
+folder on the host "Shared", by right clicking, choosing Properties->Sharing,
+and enable sharing for a only myself. To mount the share, you will need to
+install cifs-utils, mkdir the mount point, and run
+the following command:
 
 sudo mount -t cifs //<host>/<folder> /mnt/<host>/<folder> -o username=<username>
