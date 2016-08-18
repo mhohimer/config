@@ -2,7 +2,7 @@
 remote_host=mh-en-7m77s
 remote_path=proj
 remote_user=mhohimer
-local_path=~/host_proj
+local_path=~/proj
 
 mkdir -p $local_path
 sudo mount -t cifs //$remote_host/$remote_path $local_path \
