@@ -1,3 +1,5 @@
 #!/bin/bash
 
-sudo umount /mnt/MH-EN-7M77S/proj
+local_path=~/proj
+
+sudo umount -l $local_path
