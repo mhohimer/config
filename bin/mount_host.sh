@@ -1,5 +1,7 @@
 #!/bin/bash
-remote_host=mh-en-7m77s
+#remote_host=mh-en-7m77s
+# skip relying on some windows smb dns server
+remote_host=192.168.8.1
 remote_path=proj
 remote_user=mhohimer
 local_path=~/proj
