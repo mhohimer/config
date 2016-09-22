@@ -17,3 +17,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 setxkbmap -option 'caps:ctrl_modifier'
 # and to escape when tapped
 xcape -e 'Caps_Lock=Escape'
+
+# modify files/dirs marked world writable to remove green background,
+# specifically hgfs mounted directories
+export LS_COLORS="$LS_COLORS:ow=34;01:"
