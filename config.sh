@@ -61,6 +61,7 @@ ln -srf $CONFIG_DIR/.tmux.conf ~/.tmux.conf
 
 # python setup
 ln -srf $CONFIG_DIR/.flake8 ~/.flake8
+ln -srf $CONFIG_DIR/.flake8 ~/.config/flake8
 
 # bash setup
 BASHRC=~/.bashrc
