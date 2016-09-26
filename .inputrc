@@ -1,0 +1,3 @@
+$include /etc/inputrc
+# This adds a / to the end of symlinked directories on tab complete
+set mark-symlinked-directories on
