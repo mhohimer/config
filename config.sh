@@ -73,6 +73,9 @@ if ! grep -qe "^# mhohimer config" $BASHRC; then
     echo "    source" $BASHRC
 fi
 
+# inputrc
+ln -srf $CONFIG_DIR/.inputrc ~/.inputrc
+
 # vim setup
 if [ ! -d "$HOME/.vim/bundle/vundle" ]; then
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
