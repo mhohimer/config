@@ -73,6 +73,15 @@ if ! grep -qe "^# mhohimer config" $BASHRC; then
     echo "    source" $BASHRC
 fi
 
+# .profile setup
+PROFILE=~/.profile
+if ! grep -qe "^# mhohimer config" $PROFILE; then
+    echo "" >> $PROFILE
+    echo "# mhohimer config" >> $PROFILE
+    echo "." $CONFIG_DIR/.profile >> $PROFILE
+    echo $PROFILE "modified, need to log out and back in"
+fi
+
 # inputrc
 ln -srf $CONFIG_DIR/.inputrc ~/.inputrc
 

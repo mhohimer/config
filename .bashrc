@@ -13,11 +13,6 @@ export WORKON_HOME=$HOME/envs
 mkdir -p $WORKON_HOME
 source /usr/local/bin/virtualenvwrapper.sh
 
-# map caps lock key to ctrl when held...
-setxkbmap -option 'caps:ctrl_modifier'
-# and to escape when tapped
-xcape -e 'Caps_Lock=Escape'
-
 # modify files/dirs marked world writable to remove green background,
 # specifically hgfs mounted directories
 export LS_COLORS="$LS_COLORS:ow=34;01:"
