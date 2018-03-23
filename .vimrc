@@ -39,6 +39,8 @@ Plugin 'indentpython.vim'
 
 filetype plugin indent on
 
+let g:syntastic_python_python_exec = '/usr/bin/python3'
+
 set mouse=a
 set tabstop=4
 set shiftwidth=4
@@ -63,9 +65,6 @@ set list
 set listchars=tab:>-
 
 colo wombat256mod
-
-" Use flake8 in python2
-let g:flake8_cmd = 'python2-flake8'
 
 nnoremap <leader>y :let g:ycm_auto_trigger=0<CR>
 nnoremap <leader>Y :let g:ycm_auto_trigger=1<CR>

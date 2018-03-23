@@ -4,7 +4,8 @@
 # The directory of this script
 CONFIG_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-#sudo apt-get update
+sudo add-apt-repository -y ppa:greymd/tmux-xpanes
+sudo apt-get update
 
 sudo apt-get --assume-yes install \
     git \
@@ -18,6 +19,9 @@ sudo apt-get --assume-yes install \
     python-flake8 \
     virtualenv \
     cifs-utils \
+    software-properties-common \
+    tmux-xpanes \
+
 
 sudo pip install \
     virtualenvwrapper \
