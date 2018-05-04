@@ -77,13 +77,13 @@ if ! grep -qe "^# mhohimer config" $BASHRC; then
     echo "    source" $BASHRC
 fi
 
-# .profile setup
-PROFILE=~/.profile
-if ! grep -qe "^# mhohimer config" $PROFILE; then
-    echo "" >> $PROFILE
-    echo "# mhohimer config" >> $PROFILE
-    echo "." $CONFIG_DIR/.profile >> $PROFILE
-    echo $PROFILE "modified, need to log out and back in"
+# .bash_profile setup
+BASH_PROFILE =~/.bash_profile
+if ! grep -qe "^# mhohimer config" $BASH_PROFILE ; then
+    echo "" >> $BASH_PROFILE 
+    echo "# mhohimer config" >> $BASH_PROFILE 
+    echo "source $CONFIG_DIR/.bash_profile" >> $BASH_PROFILE 
+    echo $BASH_PROFILE  "modified, need to log out and back in"
 fi
 
 # inputrc
