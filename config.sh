@@ -1,49 +1,30 @@
-#!/bin/bash
+#!/bin/bash -ex
 # Ubuntu configuration script
 
 # The directory of this script
 CONFIG_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-sudo add-apt-repository -y ppa:greymd/tmux-xpanes
 sudo apt-get update
 
 sudo apt-get --assume-yes install \
     git \
     tmux \
-    vim-gnome \
+    vim-gnome \  # only vim-gnome, vim-gtk, etc. are compiled with clipboard and xtermclipboard features compiled in
+    cmake \  # for youcompleteme vim plugin
     sox \
     htop\
+    xcape \
     gconf-editor \
-    python-pip \
+    python-dev \
+    python3-pip \
+    python3-dev \
     flake8 \
-    python-flake8 \
+    python3-flake8 \
     virtualenv \
     cifs-utils \
-    software-properties-common \
-    tmux-xpanes \
-
-
-sudo pip install \
-    virtualenvwrapper \
-
-
-# xcape (make caps lock work as escape and ctrl)
-sudo apt-get --assume-yes install \
-    libx11-dev \
-    libxtst-dev \
-    libxi-dev
-if [ ! -d "$CONFIG_DIR/xcape" ]; then
-    git clone https://github.com/alols/xcape.git $CONFIG_DIR/xcape
-    cd xcape && make && sudo make install && cd -
-fi
-
+    software-properties-common
 
 ln -srf $CONFIG_DIR/bin ~
-
-# noise gen script
-wget -nc -P $CONFIG_DIR/bin https://gist.githubusercontent.com/mhohimer/eace0653a8060b8e19cf3325c2d5d142/raw/867c9f5f9e97c06c551999164a4550a8de930227/noise.sh
-chmod a+x $CONFIG_DIR/bin/noise.sh
-chmod go-w $CONFIG_DIR/bin/noise.sh
 
 # gnome-terminal setup
 gsettings set org.gnome.desktop.interface cursor-blink false
@@ -78,7 +59,7 @@ if ! grep -qe "^# mhohimer config" $BASHRC; then
 fi
 
 # .bash_profile setup
-BASH_PROFILE =~/.bash_profile
+BASH_PROFILE=~/.bash_profile
 if ! grep -qe "^# mhohimer config" $BASH_PROFILE ; then
     echo "" >> $BASH_PROFILE 
     echo "# mhohimer config" >> $BASH_PROFILE 
