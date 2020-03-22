@@ -1,2 +1,8 @@
 [flake8]
-max-line-length = 99
+#max-line-length = 99
+max-line-length = 130
+
+# From Black code style doc: https://black.readthedocs.io/en/latest/the_black_code_style.html
+#   W503 line break before binary operator is nont PEP8 compliant
+#   E203 whitespace before ':' is not PEP8 compliant
+ignore = W503,E203

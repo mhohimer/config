@@ -2,7 +2,7 @@ set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
 Plugin 'gmarik/vundle'
 "Plugin 'taglist.vim'
@@ -20,7 +20,9 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'valloric/youcompleteme'
+Plugin 'wincent/ferret'
 Plugin 'takac/vim-hardtime'
+Plugin 'heavenshell/vim-pydocstring'
 
 " colorschemes
 Plugin 'Distinguished'
@@ -36,10 +38,21 @@ Plugin 'Colortest'
 
 "Python
 Plugin 'indentpython.vim'
+Plugin 'ambv/black'
+
+call vundle#end()
+
+"let g:syntastic_python_flake8_exec = 'python -m flake8'
+let g:syntastic_python_checkers = ['flake8', 'pydocstyle']
+let g:syntastic_always_populate_loc_list= 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_wq = 0
+
+" pydocstring
+nmap <silent> <C-d> <Plug>(pydocstring)
+
 
 filetype plugin indent on
-
-let g:syntastic_python_python_exec = '/usr/bin/python3'
 
 set mouse=a
 set tabstop=4

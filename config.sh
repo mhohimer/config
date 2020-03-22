@@ -81,9 +81,9 @@ ln -srf $CONFIG_DIR/vim/airline/wombat256mod.vim $HOME/.vim/bundle/vim-airline-t
 # vim airline (fonts from powerline)
 # using airline instead of powerline
 #pip install --user powerline-status
-wget -nc -P $CONFIG_DIR \
-    https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf \
-    #https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf \
+# wget -nc -P $CONFIG_DIR \
+#     https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf \
+#     https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf \
 
 # the above PowerlineSymbols.otf isn't as pixel perfect as the one below (which still isn't entirely perfect)
 wget -nc -P $CONFIG_DIR \
